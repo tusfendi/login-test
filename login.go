@@ -11,6 +11,16 @@ var (
 	validPassword = "password123"
 )
 
+func main() {
+	// Example usage
+	err := Login("admin", "password123")
+	if err != nil {
+		fmt.Println("Login failed:", err)
+	} else {
+		fmt.Println("Login successful")
+	}
+}
+
 // Login function checks if the provided username and password are correct
 func Login(username, password string) error {
 	if username == "" {
@@ -26,14 +36,4 @@ func Login(username, password string) error {
 	}
 
 	return errors.New("invalid credentials")
-}
-
-func main() {
-	// Example usage
-	err := Login("admin", "password123")
-	if err != nil {
-		fmt.Println("Login failed:", err)
-	} else {
-		fmt.Println("Login successful")
-	}
 }
